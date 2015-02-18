@@ -7,11 +7,11 @@
     "start": "node hsp-app.js"
   },
   "dependencies": {
-    "express": "3.x",
+    "express": "4.x",
     "express-handlebars": "1.x"
   },
   "engines": {
-    "node": "^0.12.0",
+    "node": "0.x",
     "npm": "2.x"
   }
 }
