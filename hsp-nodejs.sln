@@ -1,27 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "site(1)", "http://localhost:51129", "{D4D697C0-171D-4A1E-AE95-31484638F1DF}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "hsp-nodejs", "http://localhost:63308", "{7F86C774-AB98-4995-9906-D34383BE6600}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_3000"
-		Debug.AspNetCompiler.PhysicalPath = "..\site\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3000\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_63308"
+		Debug.AspNetCompiler.PhysicalPath = "..\hsp-nodejs\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63308\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_3000"
-		Release.AspNetCompiler.PhysicalPath = "..\site\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3000\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_63308"
+		Release.AspNetCompiler.PhysicalPath = "..\hsp-nodejs\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63308\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\site\"
+		SlnRelativePath = "..\hsp-nodejs\"
 	EndProjectSection
 EndProject
 Global
@@ -29,8 +29,8 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D4D697C0-171D-4A1E-AE95-31484638F1DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4D697C0-171D-4A1E-AE95-31484638F1DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F86C774-AB98-4995-9906-D34383BE6600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F86C774-AB98-4995-9906-D34383BE6600}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
