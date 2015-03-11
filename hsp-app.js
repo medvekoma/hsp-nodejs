@@ -39,11 +39,11 @@ case 'production':
     break;
 }
 
-app.use(function (req, res, next) {
-    var cluster = require('cluster');
-    if (cluster.isWorker) console.log('Worker %d received request',
-    cluster.worker.id);
-});
+//app.use(function (req, res, next) {
+//    var cluster = require('cluster');
+//    if (cluster.isWorker) console.log('Worker %d received request',
+//    cluster.worker.id);
+//});
 
 app.get('/newsletter', function (req, res) {
     // we will learn about CSRF later...for now, we just
