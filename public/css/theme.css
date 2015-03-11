@@ -23,6 +23,7 @@ section {
 }
 
 .img-4 {
-    width: 360px;
     border: solid gray 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
