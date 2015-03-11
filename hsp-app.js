@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var http = require('http');
 
 var app = express();
 
@@ -38,6 +39,12 @@ case 'production':
     break;
 }
 
+app.use(function (req, res, next) {
+    var cluster = require('cluster');
+    if (cluster.isWorker) console.log('Worker %d received request',
+    cluster.worker.id);
+});
+
 app.get('/newsletter', function (req, res) {
     // we will learn about CSRF later...for now, we just
     // provide a dummy value
@@ -74,7 +81,22 @@ app.use(function(err, req, res, next){
     res.render('500');
 });
 
-app.listen(app.get('port'), function () {
-    console.log('Express started in ' + app.get('env') + ' mode on http://localhost:' +
-        app.get('port') + '; press Ctrl-C to terminate.' );
-});
+function startServer() {
+    http.createServer(app).listen(app.get('port'), function() {
+        console.log('Express started in ' + app.get('env') + ' mode on http://localhost:' +
+            app.get('port') + '; press Ctrl-C to terminate.');
+    });
+}
+
+if (require.main === module) {
+    // application run directly; start app server
+    startServer();
+} else {
+    // app imported as module
+    module.exports = startServer;
+}
+
+//app.listen(app.get('port'), function () {
+//    console.log('Express started in ' + app.get('env') + ' mode on http://localhost:' +
+//        app.get('port') + '; press Ctrl-C to terminate.' );
+//});
