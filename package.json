@@ -2,9 +2,9 @@
   "name": "HSP",
   "version": "1.0.0",
   "description": "HSP nodejs project",
-  "main": "hsp-cluster.js",
+  "main": "hsp-app.js",
   "scripts": {
-    "start": "node hsp-cluster.js"
+    "start": "node hsp-app.js"
   },
   "dependencies": {
     "body-parser": "^1.12.0",
