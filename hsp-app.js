@@ -23,7 +23,20 @@ app.set('port', process.env.PORT || 3000);
 app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+switch (app.get('env')) {
+case 'development':
+    // compact, colorful dev logging
+    app.use(require('morgan')('dev'));
+    break;
+case 'production':
+    // daily log rotation
+    app.use(require('express-logger')({
+        path: __dirname + '/log/requests.log'
+    }));
+    break;
+}
 
 app.get('/newsletter', function (req, res) {
     // we will learn about CSRF later...for now, we just
@@ -61,7 +74,7 @@ app.use(function(err, req, res, next){
     res.render('500');
 });
 
-app.listen(app.get('port'), function(){
-    console.log( 'Express started on http://localhost:' +
+app.listen(app.get('port'), function () {
+    console.log('Express started in ' + app.get('env') + ' mode on http://localhost:' +
         app.get('port') + '; press Ctrl-C to terminate.' );
 });
