@@ -71,6 +71,32 @@ app.get('/about', function(req, res){
     res.render('about');
 });
 
+var mongoose = require('mongoose');
+var opts = {
+    server: {
+        socketOptions: { keepAlive: 1 }
+    }
+};
+var connectionString = process.env.MONGOLAB_URI;
+var result = mongoose.connect(connectionString, opts);
+
+var Championship = require('./models/championship.js');
+
+app.get('/championships', function (req, res) {
+
+    Championship.find(function(err, championships) {
+        var context = {
+            championships: championships.map(function (championship) {
+                return {
+                    name: championship.name,
+                    location: championship.location,
+                }
+            })
+        };
+        res.render('championships', context);
+    });
+});
+
 app.get('/fail', function (req, res) {
     throw new Error('Nope!');
 });
