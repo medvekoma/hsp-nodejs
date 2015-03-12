@@ -11,10 +11,15 @@
     "express": "4.x",
     "express-handlebars": "1.x",
     "express-logger": "0.0.3",
+    "loadtest": "^1.2.7",
     "morgan": "^1.5.1"
   },
   "engines": {
     "node": "0.x",
     "npm": "2.x"
+  },
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "mocha": "^2.2.1"
   }
 }

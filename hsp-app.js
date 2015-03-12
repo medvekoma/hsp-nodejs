@@ -4,6 +4,9 @@ var http = require('http');
 
 var app = express();
 
+// domain error handling
+app.use(require('./domainError'));
+
 // set up handlebars view engine
 var handlebars = require('express-handlebars').create({
     defaultLayout:'main',
@@ -66,6 +69,16 @@ app.get('/', function(req, res){
 
 app.get('/about', function(req, res){
     res.render('about');
+});
+
+app.get('/fail', function (req, res) {
+    throw new Error('Nope!');
+});
+
+app.get('/epic-fail', function (req, res) {
+    process.nextTick(function () {
+        throw new Error('Kaboom!');
+    });
 });
 
 // custom 404 page
