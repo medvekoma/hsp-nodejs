@@ -1,5 +1,4 @@
-﻿var Championship = require('./models/championship.js');
-var mainHandler = require('./handlers/main.js');
+﻿var mainHandler = require('./handlers/main.js');
 var championshipHandler = require('./handlers/championship.js');
 
 module.exports = function (app) {
