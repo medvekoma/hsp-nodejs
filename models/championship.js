@@ -5,5 +5,4 @@ var championshipSchema = mongoose.Schema({
     location: String,
 });
 
-var Championship = mongoose.model('championship', championshipSchema);
-module.exports = Championship;
+module.exports = mongoose.model('championship', championshipSchema);
