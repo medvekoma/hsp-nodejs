@@ -1,10 +1,36 @@
-<h1>Versenyeink</h1>
+﻿<h1>Versenyeink</h1>
 
-{{#each championships}}
-<div class="championship">
-    <h3>{{name}}</h3>
-    <p>{{location}}</p>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Dátum</th>
+                <th>Verseny</th>
+                <th>Helyszín</th>
+                <th>Információ</th>
+                <th>Eredmények</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each championships}}
+            <tr>
+                <td>{{date}}</td>
+                <td>{{name}}</td>
+                <td>{{location}}</td>
+                <td>
+                    {{#each information}}
+                    <a href="{{url}}">{{name}}</a>
+                    <br />
+                    {{/each}}
+                </td>
+                <td>
+                    {{#each results}}
+                    <a href="{{url}}">{{name}}</a>
+                    <br />
+                    {{/each}}
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
 </div>
-{{else}}
-(no championships)
-{{/each}}
